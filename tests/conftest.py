@@ -1,0 +1,12 @@
+import os
+import pytest
+
+
+@pytest.fixture
+def test_file():
+    rootdir = os.path.dirname(os.path.abspath(__file__))
+    file_location = os.path.join(rootdir, 'fixtures/test_data')
+
+    with open(file_location, 'rb') as file:
+        test_data = file.read()
+    return test_data

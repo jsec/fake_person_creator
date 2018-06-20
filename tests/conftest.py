@@ -14,4 +14,4 @@ def test_file():
 
 @pytest.fixture
 def mock_request(requests_mock):
-    requests_mock.get('https://fakepersongenerator.com', text='testdata')
+    requests_mock.get('https://fakepersongenerator.com', text='testdata', status_code=200)

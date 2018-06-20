@@ -10,3 +10,8 @@ def test_file():
     with open(file_location, 'rb') as file:
         test_data = file.read()
     return test_data
+
+
+@pytest.fixture
+def mock_request(requests_mock):
+    requests_mock.get('https://fakepersongenerator.com', text='testdata')
